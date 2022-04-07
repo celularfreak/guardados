@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 			argv[1][i] = argv[1][i] + 1;
 			write(1, &argv[1][i], 1);
 		}
-	else(argv[1][i] == 'a' || argv[1][i] == 'A')
+	else if(argv[1][i] == 'a' || argv[1][i] == 'A')
 		{
 			argv[1][i] = argv[1][i] + 25;
 			write(1, &argv[1][i], 1);
