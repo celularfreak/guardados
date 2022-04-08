@@ -8,7 +8,7 @@ char    *ft_strrev(char *str)
 	while(str[len])
 		len++;
 	len--;
-	while(i < j)
+	while(i < len)
 	{
 		c = str[i];
 		str[i] = str[len];
