@@ -11,6 +11,8 @@ int main(int argc, char **argv)
 		write(1, "\n", 1);
 		return(0);
 	}
+
+	i = 0;
 	while(i < 127)
 	{
 		tab[i] = 0;
@@ -20,10 +22,10 @@ int main(int argc, char **argv)
 	while(argv[1][i] != 0)
 	{
 		j = argv[1][i];
-		if(tab[i] == 0)
+		if(tab[j] == 0)
 		{
 			write(1, &argv[1][i], 1);
-			tab[1] = 1;
+			tab[j] = 1;
 		}
 		i++;
 	}
@@ -31,10 +33,10 @@ int main(int argc, char **argv)
 	while(argv[2][i] != 0)
 	{
 		j = argv[2][i];
-		if(tab[i] == 0)
+		if(tab[j] == 0)
 		{
 			write(1, &argv[2][i], 1);
-			tab[i] = 1;
+			tab[j] = 1;
 		}
 		i++;
 	}

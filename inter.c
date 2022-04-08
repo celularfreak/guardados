@@ -29,10 +29,10 @@ int main(int argc, char **argv)
 		while(argv[1][i] != 0)
 		{
 			j = argv[1][i];
-			if(argv[1][i] == 1)
+			if(tab[j] == 1)
 			{
 				write(1, &argv[1][i], 1);
-				tab[i] = 2;
+				tab[j] = 2;
 			}
 			i++;
 		}
