@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 	int i;
 	int j;
 
-	if(argc != 2)
+	if(argc != 3)
 	{
 		write(1, "\n", 1);
 		return(0);
