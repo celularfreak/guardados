@@ -1,50 +1,44 @@
 #include <unistd.h>
 #include <stdio.h>
 
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	i++;
+	return(i);
+}
+
 int main(int argc, char **argv)
 {
-	char tab[127];
 	int i;
 	int j;
 	int cont;
-	int len;
 
-	len = 0; 
 	if(argc == 3)
 	{
-		while(argv[1][len])
-			len++;
-		printf("%d", len);
 		i = 0;
-		while(i < 127)
-		{
-			tab[i] = 0;
+		j = 0;
+		cont = 0;
+
+		if(argv[2][0] == argv[1][0])
+			cont++;
 			i++;
-		}
-		i = 0;
-		while(argv[2][i] != 0)
+		while(argv[1][i])
 		{
-			j = argv[2][i];
-			if(tab[j] == 0)
-				tab[j] = 1;
-			i++;
-		}
-		i = 0;
-		cont = 0;  
-		while(argv[1][i] != 0)
-		{
-			j = argv[1][i];
-			if(tab[j] == 1)
+			while(argv[2][j] && argv[2][j] != argv[1][i])
 			{
-				cont++;
-				tab[j] = 2;		
+				j++;
+				if(argv[2][j] == argv[1][i])
+					cont++;
 			}
 			i++;
 		}
-		printf("%d", cont);
-		if(cont == len)
-			write(1, argv[1], len);
-		write(1, "\n", 1);
-		return(0);
+		if(ft_strlen(argv[1]) == cont)
+			write(1, argv[1],ft_strlen(argv[1]));
 	}
+	write(1, "\n", 1);
+	return(0);
 }
